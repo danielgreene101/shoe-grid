@@ -1,21 +1,56 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Shoe from './Components/shoes';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+      <div style={{ alignItems: 'center' }}>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Shoe Grid
         </p>
+        <div style={{ display: 'flex' }}>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+          <Shoe/>
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+// Componants for loading in grid with borders.
+// Inside each componant function to fill in grid with desired information. 
