@@ -4,15 +4,24 @@ class Shoe extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      brand: 'nike',
-      style: 'running',
-      size: '11',
-      upcId: '643596234987',
+      brand: '',
+      style: '',
+      size: '',
+      upcId: '',
       editing: false,
     };
   }
     editShoe = () => {
       this.setState({ editing: !this.state.editing })
+    }
+    
+    deleteShoe = () => {
+      this.setState({
+        brand: '',
+        style: '',
+        size: '',
+        upcId: '',
+      })
     }
 
     updateStyle = (event) => {
@@ -42,8 +51,8 @@ class Shoe extends Component {
         } = this.state
 
       return (
-        <div style={{border: '1px solid red', display: 'flex', width: 200, height: 200}}>
-          <div style={{ display: 'block'}}>
+        <div style={{border: '1px solid red', display: 'flex', width: 200, height: 200, margin: '16px'}}>
+          <div style={{ display: 'block', margin: '8px' }}>
           {!editing ?
             <div> 
               <p>Brand: {brand}</p>
@@ -58,9 +67,14 @@ class Shoe extends Component {
               upcId: <input value={this.state.upcId} onChange={this.updateUpcId}/>
             </div>
           }
-            <button onClick={this.editShoe} >
-              {editing ? 'Save Shoe' : 'Edit Shoe'}
+          <div style={{ display: 'flex' }}>
+            <button onClick={this.editShoe} style={{ fontSize: 16 }}>
+              {editing ? 'Save Shoe' : 'Add/Edit Shoe'}
             </button>
+            {!editing ?<button onClick={this.deleteShoe} style={{ backgroundColor: 'red', fontSize: 16 }} >
+              Delete Shoe
+            </button>: null}
+          </div>
           </div>
         </div>
       );
